@@ -21,7 +21,6 @@ export default {
   },
   data () {
     return {
-      wholeWidth: 1,
       offsetLeft: 0
     }
   },
@@ -50,6 +49,9 @@ export default {
     if(this.val < this.min) this.val = this.min;
     me.wholeWidth = this.$el.querySelector('.range-selector .range').offsetWidth;
     me.offset = this.$el.offsetLeft;
+    window.addEventListener('resize', function(){
+      me.wholeWidth = me.$el.querySelector('.range-selector .range').offsetWidth;
+    });
   },
   methods: {
     click (e) {

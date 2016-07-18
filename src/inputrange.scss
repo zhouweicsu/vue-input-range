@@ -62,7 +62,8 @@ ul, p {
       .dragger {
         position: absolute;
         top: -150%;
-        left: -50%;
+        left: $dragger-size/2;
+        transform: translateX(-50%);
         color: $primary-color;
         background: $dragger-color;
         box-shadow: 0 0 10px -2px $box-shdow-color;
@@ -107,6 +108,9 @@ ul, p {
       }
       &:last-child {
         z-index: -1;
+        &:before {
+          visibility: hidden;
+        }
       }
       &:before {
         width: 2px;
