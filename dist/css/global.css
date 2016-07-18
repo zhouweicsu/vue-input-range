@@ -1,0 +1,76 @@
+ul {
+  list-style: none; }
+
+ul, p {
+  padding: 0;
+  margin: 0; }
+
+.range-selector {
+  width: 100%;
+  font-size: inherit;
+  user-select: none;
+  cursor: pointer; }
+  .range-selector .range {
+    position: relative;
+    width: 100%;
+    height: 8px;
+    background: #b2dbfb;
+    border-radius: 8px;
+    margin-top: 20px; }
+    .range-selector .range .select-range {
+      background: #2196f3;
+      border-radius: 8px;
+      height: 100%; }
+    .range-selector .range .current {
+      position: absolute;
+      color: #2196f3;
+      top: -1em;
+      z-index: 1;
+      transform: translate(-10px, -10px);
+      cursor: pointer; }
+      .range-selector .range .current.transition {
+        transition: all .3s ease; }
+      .range-selector .range .current .resizer {
+        position: relative;
+        background: white;
+        box-shadow: 0 0 10px -2px #eee;
+        display: block;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 4px; }
+        .range-selector .range .current .resizer:before, .range-selector .range .current .resizer:after {
+          content: ' ';
+          position: absolute;
+          left: 8px;
+          top: 6px;
+          height: 8px;
+          border-left: 1px solid #2196f3; }
+        .range-selector .range .current .resizer:after {
+          left: 11px; }
+  .range-selector .range-num {
+    color: #2196f3;
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    pointer-events: none; }
+    .range-selector .range-num li {
+      position: absolute;
+      top: -8px;
+      transform: translate(-100%, 0); }
+      .range-selector .range-num li:first-child {
+        transform: translate(0, 0);
+        z-index: -1; }
+      .range-selector .range-num li:last-child {
+        z-index: -1; }
+      .range-selector .range-num li:before {
+        width: 2px;
+        height: 20px;
+        background: #fff;
+        content: ' ';
+        display: block;
+        margin: auto; }
+
+/*# sourceMappingURL=global.css.map*/

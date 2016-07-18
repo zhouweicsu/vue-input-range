@@ -10279,7 +10279,7 @@
 	var __vue_script__, __vue_template__
 	__webpack_require__(4)
 	__vue_script__ = __webpack_require__(8)
-	__vue_template__ = __webpack_require__(62)
+	__vue_template__ = __webpack_require__(9)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) { (typeof module.exports === "function" ? module.exports.options : module.exports).template = __vue_template__ }
@@ -10311,8 +10311,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-49776a40&file=inputrange.vue!./../node_modules/sass-loader/index.js!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./inputrange.vue", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-49776a40&file=inputrange.vue!./../node_modules/sass-loader/index.js!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./inputrange.vue");
+			module.hot.accept("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-49776a40&file=inputrange.vue!./../node_modules/sass-loader/index.js!./inputrange.scss", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js?sourceMap!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-49776a40&file=inputrange.vue!./../node_modules/sass-loader/index.js!./inputrange.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -10330,7 +10330,7 @@
 	
 	
 	// module
-	exports.push([module.id, "@charset \"UTF-8\";\nul {\n  list-style: none; }\n\nul, p {\n  padding: 0;\n  margin: 0; }\n\n.range-selector {\n  width: 100%;\n  font-size: inherit;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  cursor: pointer; }\n  .range-selector .range {\n    position: relative;\n    width: 100%;\n    height: 10px;\n    background: #b2dbfb;\n    border-radius: 10px;\n    margin-top: 20px; }\n    .range-selector .range .select-range {\n      background: #2196f3;\n      border-radius: 10px;\n      height: 100%; }\n    .range-selector .range .current {\n      position: absolute;\n      color: #2196f3;\n      top: -1em;\n      z-index: 1;\n      -webkit-transform: translate(-10px, -10px);\n              transform: translate(-10px, -10px);\n      cursor: pointer; }\n      .range-selector .range .current.transition {\n        -webkit-transition: all .3s ease;\n        transition: all .3s ease; }\n      .range-selector .range .current:after {\n        content: '\\2016';\n        background: white;\n        box-shadow: 0 0 10px -2px #eee;\n        display: block;\n        width: 20px;\n        height: 20px;\n        line-height: 20px;\n        text-align: center;\n        border-radius: 20px;\n        margin-top: 5px; }\n  .range-selector .range-num {\n    color: #2196f3;\n    position: relative;\n    width: 100%;\n    cursor: pointer; }\n    .range-selector .range-num li {\n      position: absolute;\n      top: -10px;\n      -webkit-transform: translate(-100%, 0);\n              transform: translate(-100%, 0); }\n      .range-selector .range-num li:first-child {\n        -webkit-transform: translate(0, 0);\n                transform: translate(0, 0);\n        z-index: -1; }\n      .range-selector .range-num li:last-child {\n        z-index: -1; }\n      .range-selector .range-num li:before {\n        width: 2px;\n        height: 20px;\n        background: #fff;\n        content: ' ';\n        display: block;\n        margin: auto; }\n", "", {"version":3,"sources":["/./src/inputrange.vue.style"],"names":[],"mappings":"AAAA,iBAAiB;AACjB;EACE,iBAAiB,EAAE;;AAErB;EACE,WAAW;EACX,UAAU,EAAE;;AAEd;EACE,YAAY;EACZ,mBAAmB;EACnB,0BAAkB;KAAlB,uBAAkB;MAAlB,sBAAkB;UAAlB,kBAAkB;EAClB,gBAAgB,EAAE;EAClB;IACE,mBAAmB;IACnB,YAAY;IACZ,aAAa;IACb,oBAAoB;IACpB,oBAAoB;IACpB,iBAAiB,EAAE;IACnB;MACE,oBAAoB;MACpB,oBAAoB;MACpB,aAAa,EAAE;IACjB;MACE,mBAAmB;MACnB,eAAe;MACf,UAAU;MACV,WAAW;MACX,2CAAmC;cAAnC,mCAAmC;MACnC,gBAAgB,EAAE;MAClB;QACE,iCAAyB;QAAzB,yBAAyB,EAAE;MAC7B;QACE,iBAAa;QACb,kBAAkB;QAClB,+BAA+B;QAC/B,eAAe;QACf,YAAY;QACZ,aAAa;QACb,kBAAkB;QAClB,mBAAmB;QACnB,oBAAoB;QACpB,gBAAgB,EAAE;EACxB;IACE,eAAe;IACf,mBAAmB;IACnB,YAAY;IACZ,gBAAgB,EAAE;IAClB;MACE,mBAAmB;MACnB,WAAW;MACX,uCAA+B;cAA/B,+BAA+B,EAAE;MACjC;QACE,mCAA2B;gBAA3B,2BAA2B;QAC3B,YAAY,EAAE;MAChB;QACE,YAAY,EAAE;MAChB;QACE,WAAW;QACX,aAAa;QACb,iBAAiB;QACjB,aAAa;QACb,eAAe;QACf,aAAa,EAAE","file":"inputrange.vue","sourcesContent":["@charset \"UTF-8\";\nul {\n  list-style: none; }\n\nul, p {\n  padding: 0;\n  margin: 0; }\n\n.range-selector {\n  width: 100%;\n  font-size: inherit;\n  user-select: none;\n  cursor: pointer; }\n  .range-selector .range {\n    position: relative;\n    width: 100%;\n    height: 10px;\n    background: #b2dbfb;\n    border-radius: 10px;\n    margin-top: 20px; }\n    .range-selector .range .select-range {\n      background: #2196f3;\n      border-radius: 10px;\n      height: 100%; }\n    .range-selector .range .current {\n      position: absolute;\n      color: #2196f3;\n      top: -1em;\n      z-index: 1;\n      transform: translate(-10px, -10px);\n      cursor: pointer; }\n      .range-selector .range .current.transition {\n        transition: all .3s ease; }\n      .range-selector .range .current:after {\n        content: '‖';\n        background: white;\n        box-shadow: 0 0 10px -2px #eee;\n        display: block;\n        width: 20px;\n        height: 20px;\n        line-height: 20px;\n        text-align: center;\n        border-radius: 20px;\n        margin-top: 5px; }\n  .range-selector .range-num {\n    color: #2196f3;\n    position: relative;\n    width: 100%;\n    cursor: pointer; }\n    .range-selector .range-num li {\n      position: absolute;\n      top: -10px;\n      transform: translate(-100%, 0); }\n      .range-selector .range-num li:first-child {\n        transform: translate(0, 0);\n        z-index: -1; }\n      .range-selector .range-num li:last-child {\n        z-index: -1; }\n      .range-selector .range-num li:before {\n        width: 2px;\n        height: 20px;\n        background: #fff;\n        content: ' ';\n        display: block;\n        margin: auto; }\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "ul {\n  list-style: none; }\n\nul, p {\n  padding: 0;\n  margin: 0; }\n\n.range-selector {\n  width: 100%;\n  font-size: inherit;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  cursor: pointer; }\n  .range-selector .range {\n    position: relative;\n    width: 100%;\n    height: 8px;\n    background: #b2dbfb;\n    border-radius: 8px;\n    margin-top: 20px; }\n    .range-selector .range .select-range {\n      background: #2196f3;\n      border-radius: 8px;\n      height: 100%; }\n    .range-selector .range .resizer {\n      position: relative;\n      background: white;\n      box-shadow: 0 0 10px -2px #eee;\n      display: block;\n      width: 20px;\n      height: 20px;\n      line-height: 20px;\n      text-align: center;\n      border-radius: 20px;\n      margin-top: -14px;\n      -webkit-transform: translateX(-10px);\n              transform: translateX(-10px);\n      z-index: 1; }\n      .range-selector .range .resizer.transition {\n        -webkit-transition: all .3s ease;\n        transition: all .3s ease; }\n      .range-selector .range .resizer:before, .range-selector .range .resizer:after {\n        content: ' ';\n        position: absolute;\n        left: 8px;\n        top: 6px;\n        height: 8px;\n        border-left: 1px solid #2196f3; }\n      .range-selector .range .resizer:after {\n        left: 11px; }\n      .range-selector .range .resizer .dragger {\n        position: absolute;\n        top: -150%;\n        left: -50%;\n        color: #2196f3;\n        background: white;\n        box-shadow: 0 0 10px -2px #eee;\n        border-radius: 4px;\n        height: 20px;\n        line-height: 20px;\n        padding: 0 10px;\n        text-align: center;\n        white-space: nowrap;\n        z-index: 1; }\n        .range-selector .range .resizer .dragger:before {\n          content: ' ';\n          position: absolute;\n          width: 6px;\n          height: 6px;\n          left: 50%;\n          top: 100%;\n          background: #fff;\n          box-shadow: 0 0 10px -2px #eee;\n          margin-left: -3px;\n          margin-top: -3px;\n          -webkit-transform: rotate(-45deg);\n                  transform: rotate(-45deg);\n          z-index: -1; }\n  .range-selector .range-num {\n    color: #2196f3;\n    position: relative;\n    width: 100%;\n    cursor: pointer;\n    pointer-events: none; }\n    .range-selector .range-num li {\n      position: absolute;\n      top: -8px;\n      -webkit-transform: translateX(-50%);\n              transform: translateX(-50%); }\n      .range-selector .range-num li:first-child {\n        -webkit-transform: translateX(0);\n                transform: translateX(0);\n        z-index: -1; }\n      .range-selector .range-num li:last-child {\n        z-index: -1; }\n      .range-selector .range-num li:before {\n        width: 2px;\n        height: 8px;\n        background: #fff;\n        content: ' ';\n        display: block;\n        margin: auto;\n        margin-bottom: 10px; }\n", "", {"version":3,"sources":["/./src/inputrange.vue.style"],"names":[],"mappings":"AAAA;EACE,iBAAiB,EAAE;;AAErB;EACE,WAAW;EACX,UAAU,EAAE;;AAEd;EACE,YAAY;EACZ,mBAAmB;EACnB,0BAAkB;KAAlB,uBAAkB;MAAlB,sBAAkB;UAAlB,kBAAkB;EAClB,gBAAgB,EAAE;EAClB;IACE,mBAAmB;IACnB,YAAY;IACZ,YAAY;IACZ,oBAAoB;IACpB,mBAAmB;IACnB,iBAAiB,EAAE;IACnB;MACE,oBAAoB;MACpB,mBAAmB;MACnB,aAAa,EAAE;IACjB;MACE,mBAAmB;MACnB,kBAAkB;MAClB,+BAA+B;MAC/B,eAAe;MACf,YAAY;MACZ,aAAa;MACb,kBAAkB;MAClB,mBAAmB;MACnB,oBAAoB;MACpB,kBAAkB;MAClB,qCAA6B;cAA7B,6BAA6B;MAC7B,WAAW,EAAE;MACb;QACE,iCAAyB;QAAzB,yBAAyB,EAAE;MAC7B;QACE,aAAa;QACb,mBAAmB;QACnB,UAAU;QACV,SAAS;QACT,YAAY;QACZ,+BAA+B,EAAE;MACnC;QACE,WAAW,EAAE;MACf;QACE,mBAAmB;QACnB,WAAW;QACX,WAAW;QACX,eAAe;QACf,kBAAkB;QAClB,+BAA+B;QAC/B,mBAAmB;QACnB,aAAa;QACb,kBAAkB;QAClB,gBAAgB;QAChB,mBAAmB;QACnB,oBAAoB;QACpB,WAAW,EAAE;QACb;UACE,aAAa;UACb,mBAAmB;UACnB,WAAW;UACX,YAAY;UACZ,UAAU;UACV,UAAU;UACV,iBAAiB;UACjB,+BAA+B;UAC/B,kBAAkB;UAClB,iBAAiB;UACjB,kCAA0B;kBAA1B,0BAA0B;UAC1B,YAAY,EAAE;EACtB;IACE,eAAe;IACf,mBAAmB;IACnB,YAAY;IACZ,gBAAgB;IAChB,qBAAqB,EAAE;IACvB;MACE,mBAAmB;MACnB,UAAU;MACV,oCAA4B;cAA5B,4BAA4B,EAAE;MAC9B;QACE,iCAAyB;gBAAzB,yBAAyB;QACzB,YAAY,EAAE;MAChB;QACE,YAAY,EAAE;MAChB;QACE,WAAW;QACX,YAAY;QACZ,iBAAiB;QACjB,aAAa;QACb,eAAe;QACf,aAAa;QACb,oBAAoB,EAAE","file":"inputrange.scss","sourcesContent":["ul {\n  list-style: none; }\n\nul, p {\n  padding: 0;\n  margin: 0; }\n\n.range-selector {\n  width: 100%;\n  font-size: inherit;\n  user-select: none;\n  cursor: pointer; }\n  .range-selector .range {\n    position: relative;\n    width: 100%;\n    height: 8px;\n    background: #b2dbfb;\n    border-radius: 8px;\n    margin-top: 20px; }\n    .range-selector .range .select-range {\n      background: #2196f3;\n      border-radius: 8px;\n      height: 100%; }\n    .range-selector .range .resizer {\n      position: relative;\n      background: white;\n      box-shadow: 0 0 10px -2px #eee;\n      display: block;\n      width: 20px;\n      height: 20px;\n      line-height: 20px;\n      text-align: center;\n      border-radius: 20px;\n      margin-top: -14px;\n      transform: translateX(-10px);\n      z-index: 1; }\n      .range-selector .range .resizer.transition {\n        transition: all .3s ease; }\n      .range-selector .range .resizer:before, .range-selector .range .resizer:after {\n        content: ' ';\n        position: absolute;\n        left: 8px;\n        top: 6px;\n        height: 8px;\n        border-left: 1px solid #2196f3; }\n      .range-selector .range .resizer:after {\n        left: 11px; }\n      .range-selector .range .resizer .dragger {\n        position: absolute;\n        top: -150%;\n        left: -50%;\n        color: #2196f3;\n        background: white;\n        box-shadow: 0 0 10px -2px #eee;\n        border-radius: 4px;\n        height: 20px;\n        line-height: 20px;\n        padding: 0 10px;\n        text-align: center;\n        white-space: nowrap;\n        z-index: 1; }\n        .range-selector .range .resizer .dragger:before {\n          content: ' ';\n          position: absolute;\n          width: 6px;\n          height: 6px;\n          left: 50%;\n          top: 100%;\n          background: #fff;\n          box-shadow: 0 0 10px -2px #eee;\n          margin-left: -3px;\n          margin-top: -3px;\n          transform: rotate(-45deg);\n          z-index: -1; }\n  .range-selector .range-num {\n    color: #2196f3;\n    position: relative;\n    width: 100%;\n    cursor: pointer;\n    pointer-events: none; }\n    .range-selector .range-num li {\n      position: absolute;\n      top: -8px;\n      transform: translateX(-50%); }\n      .range-selector .range-num li:first-child {\n        transform: translateX(0);\n        z-index: -1; }\n      .range-selector .range-num li:last-child {\n        z-index: -1; }\n      .range-selector .range-num li:before {\n        width: 2px;\n        height: 8px;\n        background: #fff;\n        content: ' ';\n        display: block;\n        margin: auto;\n        margin-bottom: 10px; }\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -10653,7 +10653,7 @@
 	  value: true
 	});
 	
-	var _getIterator2 = __webpack_require__(9);
+	var _getIterator2 = __webpack_require__(10);
 	
 	var _getIterator3 = _interopRequireDefault(_getIterator2);
 	
@@ -10663,9 +10663,10 @@
 	// .range-selector(@click="click($event, this)")
 	//   .range
 	//     .select-range(:style="{width: ratio}")
-	//     .current(:style="{left: ratio}", @mousedown="dragStart(this)") {{ val }}倍
+	//     .resizer(:style="{left: ratio}", @mousedown="dragStart")
+	//       .dragger  {{ val }}倍
 	//   ul.range-num
-	//     li(v-for="i in duration", :style="{left: ((i - min) * 100 /(max - min)) + '%'}") {{ i }}
+	//     li(v-for="d in duration", :style="{left: ((d - min) * 100 /(max - min)) + '%'}") {{ d }}
 	// </template>
 	//
 	// <script>
@@ -10682,9 +10683,7 @@
 	  data: function data() {
 	    return {
 	      wholeWidth: 1,
-	      offsetLeft: 0,
-	      exactVal: 0,
-	      dragable: false
+	      offsetLeft: 0
 	    };
 	  },
 	
@@ -10709,54 +10708,56 @@
 	    }
 	  },
 	  ready: function ready() {
-	    var self = this;
+	    var me = this;
 	    if (this.val < this.min) this.val = this.min;
-	    self.wholeWidth = document.querySelector('.range-selector .range').offsetWidth;
-	    document.body.addEventListener('mousemove', function (e) {
-	      self.dragMove(e, self);
-	    });
-	    document.body.addEventListener('mouseup', function (e) {
-	      self.dragEnd(e, self);
-	    });
+	    me.wholeWidth = this.$el.querySelector('.range-selector .range').offsetWidth;
+	    me.offset = this.$el.offsetLeft;
 	  },
 	
 	  methods: {
-	    click: function click(e, self) {
-	      self.dragStart(self);
-	      self.dragMove(e, self);
-	      self.dragEnd(e, self);
+	    click: function click(e) {
+	      this.dragStart();
+	      this.dragMove(e);
+	      this.dragEnd(e);
 	    },
-	    dragStart: function dragStart(self) {
-	      self.dragable = true;
+	    dragStart: function dragStart() {
+	      this.dragable = true;
+	      document.body.addEventListener('mousemove', this.dragMove);
+	      document.body.addEventListener('mouseup', this.dragEnd);
 	    },
-	    dragMove: function dragMove(e, self) {
-	      if (!self.dragable) return false;
-	      var left = e.clientX - e.target.parentNode.offsetLeft;
-	      if (left < 0 || left > self.wholeWidth) return false;
-	      self.offsetLeft = left;
-	      self.exactVal = (self.min + self.offsetLeft * (self.max - self.min) / self.wholeWidth).toFixed(1);
-	      self.getValByOffset(self.offsetLeft, self);
+	    dragMove: function dragMove(e) {
+	      var me = this;
+	      if (!me.dragable) return false;
+	      var left = e.pageX - me.offset;
+	      if (left < 0 || left > me.wholeWidth) return false;
+	      me.offsetLeft = left;
+	      me.exactVal = (me.min + me.offsetLeft * (me.max - me.min) / me.wholeWidth).toFixed(1);
+	      me.getValByOffset(me.offsetLeft);
 	    },
-	    dragEnd: function dragEnd(e, self) {
-	      self.getValByOffset(self.offsetLeft, self);
-	      self.offsetLeft = (self.val - self.min) * self.wholeWidth / (self.max - self.min);
-	      self.dragable = false;
+	    dragEnd: function dragEnd(e) {
+	      var me = this;
+	      me.getValByOffset(me.offsetLeft);
+	      me.offsetLeft = (me.val - me.min) * me.wholeWidth / (me.max - me.min);
+	      me.dragable = false;
+	      document.body.removeEventListener('mousemove', me.dragMove);
+	      document.body.removeEventListener('mouseup', me.dragEnd);
 	    },
-	    getValByOffset: function getValByOffset(offsetLeft, self) {
-	      var left = self.values[0];
+	    getValByOffset: function getValByOffset(offsetLeft) {
+	      var me = this;
+	      var l = me.values[0];
 	      var _iteratorNormalCompletion = true;
 	      var _didIteratorError = false;
 	      var _iteratorError = undefined;
 	
 	      try {
-	        for (var _iterator = (0, _getIterator3.default)(self.values), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-	          var right = _step.value;
+	        for (var _iterator = (0, _getIterator3.default)(me.values), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+	          var r = _step.value;
 	
-	          if (self.exactVal >= left && self.exactVal < right) {
-	            self.val = self.exactVal > left + (right - left) * 0.5 / self.step ? right : left;
+	          if (me.exactVal >= l && me.exactVal < r) {
+	            me.val = me.exactVal > l + (r - l) * 0.5 / me.step ? r : l;
 	            break;
 	          }
-	          left = right;
+	          l = r;
 	        }
 	      } catch (err) {
 	        _didIteratorError = true;
@@ -10777,119 +10778,38 @@
 	};
 	// </script>
 	//
-	// <style lang="sass">
-	// $primary-color: #2196f3;
-	// $dragger-size: 20px;
-	// $dragger-color: white;
-	// $range-size: 10px;
-	//
-	// ul {
-	//   list-style: none;
-	// }
-	//
-	// ul, p {
-	//   padding: 0;
-	//   margin: 0;
-	// }
-	// .range-selector {
-	//   width: 100%;
-	//   font-size: inherit;
-	//   user-select: none;
-	//   cursor: pointer;
-	//
-	//   .range {
-	//     position: relative;
-	//     width: 100%;
-	//     height: $range-size;
-	//     background: lighten($primary-color, 30%);
-	//     border-radius: $range-size;
-	//     margin-top: 20px;
-	//
-	//     .select-range {
-	//       background: $primary-color;
-	//       border-radius: $range-size;
-	//       height: 100%;
-	//     }
-	//
-	//     .current {
-	//       position: absolute;
-	//       color: $primary-color;
-	//       top: -1em;
-	//       z-index: 1;
-	//       transform: translate(-$dragger-size/2, -$dragger-size/2);
-	//       cursor: pointer;
-	//       &.transition {
-	//         transition: all .3s ease;
-	//       }
-	//       &:after {
-	//         content: '‖';
-	//         background: $dragger-color;
-	//         box-shadow: 0 0 10px -2px #eee;
-	//         display: block;
-	//         width: $dragger-size;
-	//         height: $dragger-size;
-	//         line-height: $dragger-size;
-	//         text-align: center;
-	//         border-radius: $dragger-size;
-	//         margin-top: 5px;
-	//       }
-	//     }
-	//   }
-	//
-	//   .range-num {
-	//     color: $primary-color;
-	//     position: relative;
-	//     width: 100%;
-	//     cursor: pointer;
-	//     li {
-	//       position: absolute;
-	//       top: -$range-size;
-	//       transform: translate(-100%, 0);
-	//       &:first-child {
-	//         transform: translate(0, 0);
-	//         z-index: -1;
-	//       }
-	//       &:last-child {
-	//         z-index: -1;
-	//       }
-	//       &:before {
-	//         width: 2px;
-	//         height: $dragger-size;
-	//         background: #fff;
-	//         content: ' ';
-	//         display: block;
-	//         margin: auto;
-	//       }
-	//     }
-	//   }
-	// }
-	// </style>
-	//
+	// <style lang="sass" src="./inputrange.scss"></style>
 	/* generated by vue-loader */
 
 /***/ },
 /* 9 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	module.exports = { "default": __webpack_require__(10), __esModule: true };
+	module.exports = "<div @click=\"click($event, this)\" class=\"range-selector\"><div class=\"range\"><div :style=\"{width: ratio}\" class=\"select-range\"></div><div :style=\"{left: ratio}\" @mousedown=\"dragStart\" class=\"resizer\"><div class=\"dragger\"> {{ val }}倍</div></div></div><ul class=\"range-num\"><li v-for=\"d in duration\" :style=\"{left: ((d - min) * 100 /(max - min)) + '%'}\">{{ d }}</li></ul></div>";
 
 /***/ },
 /* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(11);
-	__webpack_require__(57);
-	module.exports = __webpack_require__(59);
+	module.exports = { "default": __webpack_require__(11), __esModule: true };
 
 /***/ },
 /* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(12);
-	var global        = __webpack_require__(23)
-	  , hide          = __webpack_require__(27)
-	  , Iterators     = __webpack_require__(15)
-	  , TO_STRING_TAG = __webpack_require__(54)('toStringTag');
+	__webpack_require__(58);
+	module.exports = __webpack_require__(60);
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(13);
+	var global        = __webpack_require__(24)
+	  , hide          = __webpack_require__(28)
+	  , Iterators     = __webpack_require__(16)
+	  , TO_STRING_TAG = __webpack_require__(55)('toStringTag');
 	
 	for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList', 'CSSRuleList'], i = 0; i < 5; i++){
 	  var NAME       = collections[i]
@@ -10900,20 +10820,20 @@
 	}
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var addToUnscopables = __webpack_require__(13)
-	  , step             = __webpack_require__(14)
-	  , Iterators        = __webpack_require__(15)
-	  , toIObject        = __webpack_require__(16);
+	var addToUnscopables = __webpack_require__(14)
+	  , step             = __webpack_require__(15)
+	  , Iterators        = __webpack_require__(16)
+	  , toIObject        = __webpack_require__(17);
 	
 	// 22.1.3.4 Array.prototype.entries()
 	// 22.1.3.13 Array.prototype.keys()
 	// 22.1.3.29 Array.prototype.values()
 	// 22.1.3.30 Array.prototype[@@iterator]()
-	module.exports = __webpack_require__(20)(Array, 'Array', function(iterated, kind){
+	module.exports = __webpack_require__(21)(Array, 'Array', function(iterated, kind){
 	  this._t = toIObject(iterated); // target
 	  this._i = 0;                   // next index
 	  this._k = kind;                // kind
@@ -10939,13 +10859,13 @@
 	addToUnscopables('entries');
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports) {
 
 	module.exports = function(){ /* empty */ };
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports) {
 
 	module.exports = function(done, value){
@@ -10953,34 +10873,34 @@
 	};
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports) {
 
 	module.exports = {};
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// to indexed object, toObject with fallback for non-array-like ES3 strings
-	var IObject = __webpack_require__(17)
-	  , defined = __webpack_require__(19);
+	var IObject = __webpack_require__(18)
+	  , defined = __webpack_require__(20);
 	module.exports = function(it){
 	  return IObject(defined(it));
 	};
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// fallback for non-array-like ES3 and non-enumerable old V8 strings
-	var cof = __webpack_require__(18);
+	var cof = __webpack_require__(19);
 	module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
 	  return cof(it) == 'String' ? it.split('') : Object(it);
 	};
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports) {
 
 	var toString = {}.toString;
@@ -10990,7 +10910,7 @@
 	};
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports) {
 
 	// 7.2.1 RequireObjectCoercible(argument)
@@ -11000,20 +10920,20 @@
 	};
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var LIBRARY        = __webpack_require__(21)
-	  , $export        = __webpack_require__(22)
-	  , redefine       = __webpack_require__(37)
-	  , hide           = __webpack_require__(27)
-	  , has            = __webpack_require__(38)
-	  , Iterators      = __webpack_require__(15)
-	  , $iterCreate    = __webpack_require__(39)
-	  , setToStringTag = __webpack_require__(53)
-	  , getPrototypeOf = __webpack_require__(55)
-	  , ITERATOR       = __webpack_require__(54)('iterator')
+	var LIBRARY        = __webpack_require__(22)
+	  , $export        = __webpack_require__(23)
+	  , redefine       = __webpack_require__(38)
+	  , hide           = __webpack_require__(28)
+	  , has            = __webpack_require__(39)
+	  , Iterators      = __webpack_require__(16)
+	  , $iterCreate    = __webpack_require__(40)
+	  , setToStringTag = __webpack_require__(54)
+	  , getPrototypeOf = __webpack_require__(56)
+	  , ITERATOR       = __webpack_require__(55)('iterator')
 	  , BUGGY          = !([].keys && 'next' in [].keys()) // Safari has buggy iterators w/o `next`
 	  , FF_ITERATOR    = '@@iterator'
 	  , KEYS           = 'keys'
@@ -11075,19 +10995,19 @@
 	};
 
 /***/ },
-/* 21 */
+/* 22 */
 /***/ function(module, exports) {
 
 	module.exports = true;
 
 /***/ },
-/* 22 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var global    = __webpack_require__(23)
-	  , core      = __webpack_require__(24)
-	  , ctx       = __webpack_require__(25)
-	  , hide      = __webpack_require__(27)
+	var global    = __webpack_require__(24)
+	  , core      = __webpack_require__(25)
+	  , ctx       = __webpack_require__(26)
+	  , hide      = __webpack_require__(28)
 	  , PROTOTYPE = 'prototype';
 	
 	var $export = function(type, name, source){
@@ -11147,7 +11067,7 @@
 	module.exports = $export;
 
 /***/ },
-/* 23 */
+/* 24 */
 /***/ function(module, exports) {
 
 	// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
@@ -11156,18 +11076,18 @@
 	if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
 
 /***/ },
-/* 24 */
+/* 25 */
 /***/ function(module, exports) {
 
 	var core = module.exports = {version: '2.4.0'};
 	if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
 
 /***/ },
-/* 25 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// optional / simple context binding
-	var aFunction = __webpack_require__(26);
+	var aFunction = __webpack_require__(27);
 	module.exports = function(fn, that, length){
 	  aFunction(fn);
 	  if(that === undefined)return fn;
@@ -11188,7 +11108,7 @@
 	};
 
 /***/ },
-/* 26 */
+/* 27 */
 /***/ function(module, exports) {
 
 	module.exports = function(it){
@@ -11197,12 +11117,12 @@
 	};
 
 /***/ },
-/* 27 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var dP         = __webpack_require__(28)
-	  , createDesc = __webpack_require__(36);
-	module.exports = __webpack_require__(32) ? function(object, key, value){
+	var dP         = __webpack_require__(29)
+	  , createDesc = __webpack_require__(37);
+	module.exports = __webpack_require__(33) ? function(object, key, value){
 	  return dP.f(object, key, createDesc(1, value));
 	} : function(object, key, value){
 	  object[key] = value;
@@ -11210,15 +11130,15 @@
 	};
 
 /***/ },
-/* 28 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var anObject       = __webpack_require__(29)
-	  , IE8_DOM_DEFINE = __webpack_require__(31)
-	  , toPrimitive    = __webpack_require__(35)
+	var anObject       = __webpack_require__(30)
+	  , IE8_DOM_DEFINE = __webpack_require__(32)
+	  , toPrimitive    = __webpack_require__(36)
 	  , dP             = Object.defineProperty;
 	
-	exports.f = __webpack_require__(32) ? Object.defineProperty : function defineProperty(O, P, Attributes){
+	exports.f = __webpack_require__(33) ? Object.defineProperty : function defineProperty(O, P, Attributes){
 	  anObject(O);
 	  P = toPrimitive(P, true);
 	  anObject(Attributes);
@@ -11231,17 +11151,17 @@
 	};
 
 /***/ },
-/* 29 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isObject = __webpack_require__(30);
+	var isObject = __webpack_require__(31);
 	module.exports = function(it){
 	  if(!isObject(it))throw TypeError(it + ' is not an object!');
 	  return it;
 	};
 
 /***/ },
-/* 30 */
+/* 31 */
 /***/ function(module, exports) {
 
 	module.exports = function(it){
@@ -11249,24 +11169,24 @@
 	};
 
 /***/ },
-/* 31 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = !__webpack_require__(32) && !__webpack_require__(33)(function(){
-	  return Object.defineProperty(__webpack_require__(34)('div'), 'a', {get: function(){ return 7; }}).a != 7;
-	});
-
-/***/ },
 /* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// Thank's IE8 for his funny defineProperty
-	module.exports = !__webpack_require__(33)(function(){
-	  return Object.defineProperty({}, 'a', {get: function(){ return 7; }}).a != 7;
+	module.exports = !__webpack_require__(33) && !__webpack_require__(34)(function(){
+	  return Object.defineProperty(__webpack_require__(35)('div'), 'a', {get: function(){ return 7; }}).a != 7;
 	});
 
 /***/ },
 /* 33 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// Thank's IE8 for his funny defineProperty
+	module.exports = !__webpack_require__(34)(function(){
+	  return Object.defineProperty({}, 'a', {get: function(){ return 7; }}).a != 7;
+	});
+
+/***/ },
+/* 34 */
 /***/ function(module, exports) {
 
 	module.exports = function(exec){
@@ -11278,11 +11198,11 @@
 	};
 
 /***/ },
-/* 34 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isObject = __webpack_require__(30)
-	  , document = __webpack_require__(23).document
+	var isObject = __webpack_require__(31)
+	  , document = __webpack_require__(24).document
 	  // in old IE typeof document.createElement is 'object'
 	  , is = isObject(document) && isObject(document.createElement);
 	module.exports = function(it){
@@ -11290,11 +11210,11 @@
 	};
 
 /***/ },
-/* 35 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.1.1 ToPrimitive(input [, PreferredType])
-	var isObject = __webpack_require__(30);
+	var isObject = __webpack_require__(31);
 	// instead of the ES6 spec version, we didn't implement @@toPrimitive case
 	// and the second argument - flag - preferred type is a string
 	module.exports = function(it, S){
@@ -11307,7 +11227,7 @@
 	};
 
 /***/ },
-/* 36 */
+/* 37 */
 /***/ function(module, exports) {
 
 	module.exports = function(bitmap, value){
@@ -11320,13 +11240,13 @@
 	};
 
 /***/ },
-/* 37 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(27);
+	module.exports = __webpack_require__(28);
 
 /***/ },
-/* 38 */
+/* 39 */
 /***/ function(module, exports) {
 
 	var hasOwnProperty = {}.hasOwnProperty;
@@ -11335,17 +11255,17 @@
 	};
 
 /***/ },
-/* 39 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var create         = __webpack_require__(40)
-	  , descriptor     = __webpack_require__(36)
-	  , setToStringTag = __webpack_require__(53)
+	var create         = __webpack_require__(41)
+	  , descriptor     = __webpack_require__(37)
+	  , setToStringTag = __webpack_require__(54)
 	  , IteratorPrototype = {};
 	
 	// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
-	__webpack_require__(27)(IteratorPrototype, __webpack_require__(54)('iterator'), function(){ return this; });
+	__webpack_require__(28)(IteratorPrototype, __webpack_require__(55)('iterator'), function(){ return this; });
 	
 	module.exports = function(Constructor, NAME, next){
 	  Constructor.prototype = create(IteratorPrototype, {next: descriptor(1, next)});
@@ -11353,26 +11273,26 @@
 	};
 
 /***/ },
-/* 40 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-	var anObject    = __webpack_require__(29)
-	  , dPs         = __webpack_require__(41)
-	  , enumBugKeys = __webpack_require__(51)
-	  , IE_PROTO    = __webpack_require__(48)('IE_PROTO')
+	var anObject    = __webpack_require__(30)
+	  , dPs         = __webpack_require__(42)
+	  , enumBugKeys = __webpack_require__(52)
+	  , IE_PROTO    = __webpack_require__(49)('IE_PROTO')
 	  , Empty       = function(){ /* empty */ }
 	  , PROTOTYPE   = 'prototype';
 	
 	// Create object with fake `null` prototype: use iframe Object with cleared prototype
 	var createDict = function(){
 	  // Thrash, waste and sodomy: IE GC bug
-	  var iframe = __webpack_require__(34)('iframe')
+	  var iframe = __webpack_require__(35)('iframe')
 	    , i      = enumBugKeys.length
 	    , gt     = '>'
 	    , iframeDocument;
 	  iframe.style.display = 'none';
-	  __webpack_require__(52).appendChild(iframe);
+	  __webpack_require__(53).appendChild(iframe);
 	  iframe.src = 'javascript:'; // eslint-disable-line no-script-url
 	  // createDict = iframe.contentWindow.Object;
 	  // html.removeChild(iframe);
@@ -11398,14 +11318,14 @@
 	};
 
 /***/ },
-/* 41 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var dP       = __webpack_require__(28)
-	  , anObject = __webpack_require__(29)
-	  , getKeys  = __webpack_require__(42);
+	var dP       = __webpack_require__(29)
+	  , anObject = __webpack_require__(30)
+	  , getKeys  = __webpack_require__(43);
 	
-	module.exports = __webpack_require__(32) ? Object.defineProperties : function defineProperties(O, Properties){
+	module.exports = __webpack_require__(33) ? Object.defineProperties : function defineProperties(O, Properties){
 	  anObject(O);
 	  var keys   = getKeys(Properties)
 	    , length = keys.length
@@ -11416,25 +11336,25 @@
 	};
 
 /***/ },
-/* 42 */
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.2.14 / 15.2.3.14 Object.keys(O)
-	var $keys       = __webpack_require__(43)
-	  , enumBugKeys = __webpack_require__(51);
+	var $keys       = __webpack_require__(44)
+	  , enumBugKeys = __webpack_require__(52);
 	
 	module.exports = Object.keys || function keys(O){
 	  return $keys(O, enumBugKeys);
 	};
 
 /***/ },
-/* 43 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var has          = __webpack_require__(38)
-	  , toIObject    = __webpack_require__(16)
-	  , arrayIndexOf = __webpack_require__(44)(false)
-	  , IE_PROTO     = __webpack_require__(48)('IE_PROTO');
+	var has          = __webpack_require__(39)
+	  , toIObject    = __webpack_require__(17)
+	  , arrayIndexOf = __webpack_require__(45)(false)
+	  , IE_PROTO     = __webpack_require__(49)('IE_PROTO');
 	
 	module.exports = function(object, names){
 	  var O      = toIObject(object)
@@ -11450,14 +11370,14 @@
 	};
 
 /***/ },
-/* 44 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// false -> Array#indexOf
 	// true  -> Array#includes
-	var toIObject = __webpack_require__(16)
-	  , toLength  = __webpack_require__(45)
-	  , toIndex   = __webpack_require__(47);
+	var toIObject = __webpack_require__(17)
+	  , toLength  = __webpack_require__(46)
+	  , toIndex   = __webpack_require__(48);
 	module.exports = function(IS_INCLUDES){
 	  return function($this, el, fromIndex){
 	    var O      = toIObject($this)
@@ -11476,18 +11396,18 @@
 	};
 
 /***/ },
-/* 45 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.1.15 ToLength
-	var toInteger = __webpack_require__(46)
+	var toInteger = __webpack_require__(47)
 	  , min       = Math.min;
 	module.exports = function(it){
 	  return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
 	};
 
 /***/ },
-/* 46 */
+/* 47 */
 /***/ function(module, exports) {
 
 	// 7.1.4 ToInteger
@@ -11498,10 +11418,10 @@
 	};
 
 /***/ },
-/* 47 */
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var toInteger = __webpack_require__(46)
+	var toInteger = __webpack_require__(47)
 	  , max       = Math.max
 	  , min       = Math.min;
 	module.exports = function(index, length){
@@ -11510,20 +11430,20 @@
 	};
 
 /***/ },
-/* 48 */
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var shared = __webpack_require__(49)('keys')
-	  , uid    = __webpack_require__(50);
+	var shared = __webpack_require__(50)('keys')
+	  , uid    = __webpack_require__(51);
 	module.exports = function(key){
 	  return shared[key] || (shared[key] = uid(key));
 	};
 
 /***/ },
-/* 49 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var global = __webpack_require__(23)
+	var global = __webpack_require__(24)
 	  , SHARED = '__core-js_shared__'
 	  , store  = global[SHARED] || (global[SHARED] = {});
 	module.exports = function(key){
@@ -11531,7 +11451,7 @@
 	};
 
 /***/ },
-/* 50 */
+/* 51 */
 /***/ function(module, exports) {
 
 	var id = 0
@@ -11541,7 +11461,7 @@
 	};
 
 /***/ },
-/* 51 */
+/* 52 */
 /***/ function(module, exports) {
 
 	// IE 8- don't enum bug keys
@@ -11550,30 +11470,30 @@
 	).split(',');
 
 /***/ },
-/* 52 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(23).document && document.documentElement;
-
-/***/ },
 /* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var def = __webpack_require__(28).f
-	  , has = __webpack_require__(38)
-	  , TAG = __webpack_require__(54)('toStringTag');
+	module.exports = __webpack_require__(24).document && document.documentElement;
+
+/***/ },
+/* 54 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var def = __webpack_require__(29).f
+	  , has = __webpack_require__(39)
+	  , TAG = __webpack_require__(55)('toStringTag');
 	
 	module.exports = function(it, tag, stat){
 	  if(it && !has(it = stat ? it : it.prototype, TAG))def(it, TAG, {configurable: true, value: tag});
 	};
 
 /***/ },
-/* 54 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var store      = __webpack_require__(49)('wks')
-	  , uid        = __webpack_require__(50)
-	  , Symbol     = __webpack_require__(23).Symbol
+	var store      = __webpack_require__(50)('wks')
+	  , uid        = __webpack_require__(51)
+	  , Symbol     = __webpack_require__(24).Symbol
 	  , USE_SYMBOL = typeof Symbol == 'function';
 	
 	var $exports = module.exports = function(name){
@@ -11584,13 +11504,13 @@
 	$exports.store = store;
 
 /***/ },
-/* 55 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
-	var has         = __webpack_require__(38)
-	  , toObject    = __webpack_require__(56)
-	  , IE_PROTO    = __webpack_require__(48)('IE_PROTO')
+	var has         = __webpack_require__(39)
+	  , toObject    = __webpack_require__(57)
+	  , IE_PROTO    = __webpack_require__(49)('IE_PROTO')
 	  , ObjectProto = Object.prototype;
 	
 	module.exports = Object.getPrototypeOf || function(O){
@@ -11602,24 +11522,24 @@
 	};
 
 /***/ },
-/* 56 */
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.1.13 ToObject(argument)
-	var defined = __webpack_require__(19);
+	var defined = __webpack_require__(20);
 	module.exports = function(it){
 	  return Object(defined(it));
 	};
 
 /***/ },
-/* 57 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var $at  = __webpack_require__(58)(true);
+	var $at  = __webpack_require__(59)(true);
 	
 	// 21.1.3.27 String.prototype[@@iterator]()
-	__webpack_require__(20)(String, 'String', function(iterated){
+	__webpack_require__(21)(String, 'String', function(iterated){
 	  this._t = String(iterated); // target
 	  this._i = 0;                // next index
 	// 21.1.5.2.1 %StringIteratorPrototype%.next()
@@ -11634,11 +11554,11 @@
 	});
 
 /***/ },
-/* 58 */
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var toInteger = __webpack_require__(46)
-	  , defined   = __webpack_require__(19);
+	var toInteger = __webpack_require__(47)
+	  , defined   = __webpack_require__(20);
 	// true  -> String#at
 	// false -> String#codePointAt
 	module.exports = function(TO_STRING){
@@ -11656,37 +11576,37 @@
 	};
 
 /***/ },
-/* 59 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var anObject = __webpack_require__(29)
-	  , get      = __webpack_require__(60);
-	module.exports = __webpack_require__(24).getIterator = function(it){
+	var anObject = __webpack_require__(30)
+	  , get      = __webpack_require__(61);
+	module.exports = __webpack_require__(25).getIterator = function(it){
 	  var iterFn = get(it);
 	  if(typeof iterFn != 'function')throw TypeError(it + ' is not iterable!');
 	  return anObject(iterFn.call(it));
 	};
 
 /***/ },
-/* 60 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var classof   = __webpack_require__(61)
-	  , ITERATOR  = __webpack_require__(54)('iterator')
-	  , Iterators = __webpack_require__(15);
-	module.exports = __webpack_require__(24).getIteratorMethod = function(it){
+	var classof   = __webpack_require__(62)
+	  , ITERATOR  = __webpack_require__(55)('iterator')
+	  , Iterators = __webpack_require__(16);
+	module.exports = __webpack_require__(25).getIteratorMethod = function(it){
 	  if(it != undefined)return it[ITERATOR]
 	    || it['@@iterator']
 	    || Iterators[classof(it)];
 	};
 
 /***/ },
-/* 61 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// getting tag from 19.1.3.6 Object.prototype.toString()
-	var cof = __webpack_require__(18)
-	  , TAG = __webpack_require__(54)('toStringTag')
+	var cof = __webpack_require__(19)
+	  , TAG = __webpack_require__(55)('toStringTag')
 	  // ES3 wrong here
 	  , ARG = cof(function(){ return arguments; }()) == 'Arguments';
 	
@@ -11707,12 +11627,6 @@
 	    // ES3 arguments fallback
 	    : (B = cof(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
 	};
-
-/***/ },
-/* 62 */
-/***/ function(module, exports) {
-
-	module.exports = "<div @click=\"click($event, this)\" class=\"range-selector\"><div class=\"range\"><div :style=\"{width: ratio}\" class=\"select-range\"></div><div :style=\"{left: ratio}\" @mousedown=\"dragStart(this)\" class=\"current\">{{ val }}倍</div></div><ul class=\"range-num\"><li v-for=\"i in duration\" :style=\"{left: ((i - min) * 100 /(max - min)) + '%'}\">{{ i }}</li></ul></div>";
 
 /***/ }
 /******/ ]);

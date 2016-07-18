@@ -1,0 +1,122 @@
+$primary-color: #2196f3;
+$dragger-size: 20px;
+$dragger-color: white;
+$range-size: 8px;
+$box-shdow-color: #eee;
+
+ul {
+  list-style: none;
+}
+
+ul, p {
+  padding: 0;
+  margin: 0;
+}
+.range-selector {
+  width: 100%;
+  font-size: inherit;
+  user-select: none;
+  cursor: pointer;
+
+  .range {
+    position: relative;
+    width: 100%;
+    height: $range-size;
+    background: lighten($primary-color, 30%);
+    border-radius: $range-size;
+    margin-top: 20px;
+
+    .select-range {
+      background: $primary-color;
+      border-radius: $range-size;
+      height: 100%;
+    }
+
+    .resizer {
+      position: relative;
+      background: $dragger-color;
+      box-shadow: 0 0 10px -2px $box-shdow-color;
+      display: block;
+      width: $dragger-size;
+      height: $dragger-size;
+      line-height: $dragger-size;
+      text-align: center;
+      border-radius: $dragger-size;
+      margin-top: -14px;
+      transform: translateX(-$dragger-size/2);
+      z-index: 1;
+      &.transition {
+        transition: all .3s ease;
+      }
+      &:before, &:after {
+        content: ' ';
+        position: absolute;
+        left: 8px;
+        top: 6px;
+        height: 8px;
+        border-left: 1px solid $primary-color;
+      }
+      &:after {
+        left: 11px;
+      }
+      .dragger {
+        position: absolute;
+        top: -150%;
+        left: -50%;
+        color: $primary-color;
+        background: $dragger-color;
+        box-shadow: 0 0 10px -2px $box-shdow-color;
+        border-radius: 4px;
+        height: 20px;
+        line-height: 20px;
+        padding: 0 10px;
+        text-align: center;
+        white-space: nowrap;
+        z-index: 1;
+        &:before {
+          content: ' ';
+          position: absolute;
+          width: 6px;
+          height: 6px;
+          left: 50%;
+          top: 100%;
+          background: #fff;
+          box-shadow: 0 0 10px -2px $box-shdow-color;
+          margin-left: -3px;
+          margin-top: -3px;
+          transform: rotate(-45deg);
+          z-index: -1;
+        }
+      }
+    }
+  }
+
+  .range-num {
+    color: $primary-color;
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    pointer-events: none;
+    li {
+      position: absolute;
+      top: -$range-size;
+      transform: translateX(-50%);
+      &:first-child {
+        transform: translateX(0);
+        z-index: -1;
+      }
+      &:last-child {
+        z-index: -1;
+      }
+      &:before {
+        width: 2px;
+        height: $range-size;
+        background: #fff;
+        content: ' ';
+        display: block;
+        margin: auto;
+        margin-bottom: $dragger-size/2;
+      }
+    }
+  }
+}
