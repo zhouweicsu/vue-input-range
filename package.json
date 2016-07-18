@@ -1,0 +1,55 @@
+{
+  "name": "vue-input-range",
+  "version": "1.0.0",
+  "description": "vue-input-range",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "./node_modules/karma/bin/karma start karma.conf.js",
+    "start": "webpack-dev-server --port 9876 --host 0.0.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhouweicsu/vue-input-range.git"
+  },
+  "keywords": [
+    "vue",
+    "component",
+    "vue-input-range"
+  ],
+  "author": "zhouweicsu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhouweicsu/vue-input-range/issues"
+  },
+  "homepage": "https://github.com/zhouweicsu/vue-input-range",
+  "dependencies": {
+    "babel-core": "^6.3.15",
+    "babel-loader": "^6.1.0",
+    "css-loader": "^0.23.1",
+    "vue": "^1.0.3",
+    "vue-loader": "^7.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.3.15",
+    "babel-plugin-transform-runtime": "^6.6.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "extract-text-webpack-plugin": "^0.9.1",
+    "jade": "^1.11.0",
+    "karma": "^0.13.22",
+    "karma-leche": "0.0.3",
+    "karma-mocha": "^0.2.1",
+    "karma-nyan-reporter": "^0.2.3",
+    "karma-sinon": "^1.0.4",
+    "karma-webpack": "^1.7.0",
+    "leche": "^2.1.1",
+    "mocha": "^2.3.4",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.1.2",
+    "sinon": "^1.17.2",
+    "style-loader": "^0.13.0",
+    "template-html-loader": "0.0.3",
+    "vue-html-loader": "^1.2.0",
+    "webpack": "^1.12.2"
+  }
+}
