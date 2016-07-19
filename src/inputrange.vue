@@ -47,13 +47,15 @@ export default {
   ready () {
     const me = this;
     if(this.val < this.min || this.val > this.max) this.val = this.min;
-    me.wholeWidth = this.$el.querySelector('.range-selector .range').offsetWidth;
+    me.getWholeWidth();
+    me.offsetLeft = (me.val-me.min) * me.wholeWidth /(me.max-me.min);
     me.offset = this.$el.offsetLeft;
-    window.addEventListener('resize', function(){
-      me.wholeWidth = me.$el.querySelector('.range-selector .range').offsetWidth;
-    });
+    window.addEventListener('resize', me.getWholeWidth);
   },
   methods: {
+    getWholeWidth() {
+      this.wholeWidth = this.$el.querySelector('.range-selector .range').offsetWidth;
+    },
     click (e) {
       this.dragStart();
       this.dragMove(e);
@@ -92,6 +94,9 @@ export default {
         l = r;
       }
     }
+  },
+  destroyed() {
+    window.removeEventListener('resize',this.getWholeWidth);
   }
 }
 </script>

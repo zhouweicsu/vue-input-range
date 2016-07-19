@@ -61,7 +61,7 @@
 	var demo = new _vue2.default({
 	    el: "#demo",
 	    data: {
-	        val: 1,
+	        val: 10,
 	        step: 1,
 	        duration: [1, 5, 10, 15, 20]
 	    }
@@ -10709,14 +10709,16 @@
 	  ready: function ready() {
 	    var me = this;
 	    if (this.val < this.min || this.val > this.max) this.val = this.min;
-	    me.wholeWidth = this.$el.querySelector('.range-selector .range').offsetWidth;
+	    me.getWholeWidth();
+	    me.offsetLeft = (me.val - me.min) * me.wholeWidth / (me.max - me.min);
 	    me.offset = this.$el.offsetLeft;
-	    window.addEventListener('resize', function () {
-	      me.wholeWidth = me.$el.querySelector('.range-selector .range').offsetWidth;
-	    });
+	    window.addEventListener('resize', me.getWholeWidth);
 	  },
 	
 	  methods: {
+	    getWholeWidth: function getWholeWidth() {
+	      this.wholeWidth = this.$el.querySelector('.range-selector .range').offsetWidth;
+	    },
 	    click: function click(e) {
 	      this.dragStart();
 	      this.dragMove(e);
@@ -10776,6 +10778,9 @@
 	        }
 	      }
 	    }
+	  },
+	  destroyed: function destroyed() {
+	    window.removeEventListener('resize', this.getWholeWidth);
 	  }
 	};
 	// </script>
