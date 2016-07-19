@@ -2,7 +2,7 @@ $primary-color: #2196f3;
 $dragger-size: 20px;
 $dragger-color: white;
 $range-size: 8px;
-$box-shdow-color: #eee;
+$box-shdow-color: #aaa;
 
 ul {
   list-style: none;
@@ -17,6 +17,7 @@ ul, p {
   font-size: inherit;
   user-select: none;
   cursor: pointer;
+  margin-top: $dragger-size*2;
 
   .range {
     position: relative;
@@ -104,10 +105,8 @@ ul, p {
       transform: translateX(-50%);
       &:first-child {
         transform: translateX(0);
-        z-index: -1;
       }
-      &:last-child {
-        z-index: -1;
+      &:first-child ,&:last-child {
         &:before {
           visibility: hidden;
         }

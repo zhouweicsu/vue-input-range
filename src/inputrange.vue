@@ -41,12 +41,12 @@ export default {
       return range;
     },
     ratio () {
-      return this.offsetLeft * 100 / this.wholeWidth + '%';
+      return (this.offsetLeft * 100 / this.wholeWidth || 0) + '%';
     }
   },
   ready () {
     const me = this;
-    if(this.val < this.min) this.val = this.min;
+    if(this.val < this.min || this.val > this.max) this.val = this.min;
     me.wholeWidth = this.$el.querySelector('.range-selector .range').offsetWidth;
     me.offset = this.$el.offsetLeft;
     window.addEventListener('resize', function(){
