@@ -1,13 +1,15 @@
 # vue-input-range
 input range components for vue.js
 
+![input range](http://p3.qhimg.com/t019257210cc7ae6c21.jpg)
+
 # How to use?
 ```
 git clone git@github.com:zhouweicsu/vue-input-range.git
 
 cd vue-input-range
 
-npm3 install
+npm install
 
 npm start
 ```
