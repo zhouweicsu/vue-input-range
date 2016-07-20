@@ -1,5 +1,5 @@
 <template lang="jade">
-.range-selector(@click="click($event, this)")
+.range-selector(@click="click($event)")
   .range
     .select-range(:style="{width: ratio}")
     .resizer(:style="{left: ratio}", @mousedown="dragStart")
@@ -14,15 +14,10 @@ export default {
     step: {
       default: 1
     },
-    duration: Array,
     val: {
       default: 0
-    }
-  },
-  data () {
-    return {
-      offsetLeft: 0
-    }
+    },
+    duration: Array
   },
   computed: {
     max () {
@@ -41,16 +36,15 @@ export default {
       return range;
     },
     ratio () {
-      return (this.offsetLeft * 100 / this.wholeWidth || 0) + '%';
+      if(this.val < this.min) this.val = this.min;
+      if(this.val > this.max) this.val = this.max;
+      return (this.val - this.min) * 100 / (this.max - this.min) + '%';
     }
   },
   ready () {
-    const me = this;
-    if(this.val < this.min || this.val > this.max) this.val = this.min;
-    me.getWholeWidth();
-    me.offsetLeft = (me.val-me.min) * me.wholeWidth /(me.max-me.min);
-    me.offset = this.$el.offsetLeft;
-    window.addEventListener('resize', me.getWholeWidth);
+    this.getWholeWidth();
+    this.offset = this.$el.offsetLeft;
+    window.addEventListener('resize', this.getWholeWidth);
   },
   methods: {
     getWholeWidth() {
@@ -59,7 +53,7 @@ export default {
     click (e) {
       this.dragStart();
       this.dragMove(e);
-      this.dragEnd(e);
+      this.dragEnd();
     },
     dragStart () {
       this.dragable = true;
@@ -68,27 +62,22 @@ export default {
     },
     dragMove (e) {
       const me = this;
-      if (!me.dragable) return false;
       const left = e.pageX - me.offset;
-      if (left < 0 || left > me.wholeWidth) return false;
-      me.offsetLeft = left;
-      me.exactVal = (me.min + me.offsetLeft * (me.max-me.min) / me.wholeWidth).toFixed(1);
-      me.getValByOffset(me.offsetLeft);
+      if (!me.dragable || left < 0 || left > me.wholeWidth) return false;
+      const exactVal = (me.min + left * (me.max-me.min) / me.wholeWidth).toFixed(1);
+      me.setVal(exactVal);
     },
-    dragEnd (e) {
-      const me = this;
-      me.getValByOffset(me.offsetLeft);
-      me.offsetLeft = (me.val - me.min) * me.wholeWidth / (me.max - me.min);
-      me.dragable = false;
-      document.body.removeEventListener('mousemove',me.dragMove);
-      document.body.removeEventListener('mouseup',me.dragEnd);
+    dragEnd () {
+      this.dragable = false;
+      document.body.removeEventListener('mousemove',this.dragMove);
+      document.body.removeEventListener('mouseup',this.dragEnd);
     },
-    getValByOffset (offsetLeft) {
+    setVal (exactVal) {
       const me = this;
       let l = me.values[0];
       for(let r of me.values) {
-        if(me.exactVal >= l && me.exactVal < r) {
-          me.val = me.exactVal > (l + (r - l) * 0.5 / me.step) ? r : l;
+        if(exactVal >= l && exactVal < r) {
+          me.val = exactVal > (l + (r - l) * 0.5 / me.step) ? r : l;
           break;
         }
         l = r;

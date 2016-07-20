@@ -10660,7 +10660,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// <template lang="jade">
-	// .range-selector(@click="click($event, this)")
+	// .range-selector(@click="click($event)")
 	//   .range
 	//     .select-range(:style="{width: ratio}")
 	//     .resizer(:style="{left: ratio}", @mousedown="dragStart")
@@ -10675,17 +10675,11 @@
 	    step: {
 	      default: 1
 	    },
-	    duration: Array,
 	    val: {
 	      default: 0
-	    }
+	    },
+	    duration: Array
 	  },
-	  data: function data() {
-	    return {
-	      offsetLeft: 0
-	    };
-	  },
-	
 	  computed: {
 	    max: function max() {
 	      return this.duration[this.duration.length - 1];
@@ -10703,16 +10697,15 @@
 	      return range;
 	    },
 	    ratio: function ratio() {
-	      return (this.offsetLeft * 100 / this.wholeWidth || 0) + '%';
+	      if (this.val < this.min) this.val = this.min;
+	      if (this.val > this.max) this.val = this.max;
+	      return (this.val - this.min) * 100 / (this.max - this.min) + '%';
 	    }
 	  },
 	  ready: function ready() {
-	    var me = this;
-	    if (this.val < this.min || this.val > this.max) this.val = this.min;
-	    me.getWholeWidth();
-	    me.offsetLeft = (me.val - me.min) * me.wholeWidth / (me.max - me.min);
-	    me.offset = this.$el.offsetLeft;
-	    window.addEventListener('resize', me.getWholeWidth);
+	    this.getWholeWidth();
+	    this.offset = this.$el.offsetLeft;
+	    window.addEventListener('resize', this.getWholeWidth);
 	  },
 	
 	  methods: {
@@ -10722,7 +10715,7 @@
 	    click: function click(e) {
 	      this.dragStart();
 	      this.dragMove(e);
-	      this.dragEnd(e);
+	      this.dragEnd();
 	    },
 	    dragStart: function dragStart() {
 	      this.dragable = true;
@@ -10731,22 +10724,17 @@
 	    },
 	    dragMove: function dragMove(e) {
 	      var me = this;
-	      if (!me.dragable) return false;
 	      var left = e.pageX - me.offset;
-	      if (left < 0 || left > me.wholeWidth) return false;
-	      me.offsetLeft = left;
-	      me.exactVal = (me.min + me.offsetLeft * (me.max - me.min) / me.wholeWidth).toFixed(1);
-	      me.getValByOffset(me.offsetLeft);
+	      if (!me.dragable || left < 0 || left > me.wholeWidth) return false;
+	      var exactVal = (me.min + left * (me.max - me.min) / me.wholeWidth).toFixed(1);
+	      me.setVal(exactVal);
 	    },
-	    dragEnd: function dragEnd(e) {
-	      var me = this;
-	      me.getValByOffset(me.offsetLeft);
-	      me.offsetLeft = (me.val - me.min) * me.wholeWidth / (me.max - me.min);
-	      me.dragable = false;
-	      document.body.removeEventListener('mousemove', me.dragMove);
-	      document.body.removeEventListener('mouseup', me.dragEnd);
+	    dragEnd: function dragEnd() {
+	      this.dragable = false;
+	      document.body.removeEventListener('mousemove', this.dragMove);
+	      document.body.removeEventListener('mouseup', this.dragEnd);
 	    },
-	    getValByOffset: function getValByOffset(offsetLeft) {
+	    setVal: function setVal(exactVal) {
 	      var me = this;
 	      var l = me.values[0];
 	      var _iteratorNormalCompletion = true;
@@ -10757,8 +10745,8 @@
 	        for (var _iterator = (0, _getIterator3.default)(me.values), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
 	          var r = _step.value;
 	
-	          if (me.exactVal >= l && me.exactVal < r) {
-	            me.val = me.exactVal > l + (r - l) * 0.5 / me.step ? r : l;
+	          if (exactVal >= l && exactVal < r) {
+	            me.val = exactVal > l + (r - l) * 0.5 / me.step ? r : l;
 	            break;
 	          }
 	          l = r;
@@ -11633,7 +11621,7 @@
 /* 62 */
 /***/ function(module, exports) {
 
-	module.exports = "<div @click=\"click($event, this)\" class=\"range-selector\"><div class=\"range\"><div :style=\"{width: ratio}\" class=\"select-range\"></div><div :style=\"{left: ratio}\" @mousedown=\"dragStart\" class=\"resizer\"><div class=\"dragger\"> {{ val }}倍</div></div></div><ul class=\"range-num\"><li v-for=\"d in duration\" :style=\"{left: ((d - min) * 100 /(max - min)) + '%'}\">{{ d }}</li></ul></div>";
+	module.exports = "<div @click=\"click($event)\" class=\"range-selector\"><div class=\"range\"><div :style=\"{width: ratio}\" class=\"select-range\"></div><div :style=\"{left: ratio}\" @mousedown=\"dragStart\" class=\"resizer\"><div class=\"dragger\"> {{ val }}倍</div></div></div><ul class=\"range-num\"><li v-for=\"d in duration\" :style=\"{left: ((d - min) * 100 /(max - min)) + '%'}\">{{ d }}</li></ul></div>";
 
 /***/ }
 /******/ ]);
