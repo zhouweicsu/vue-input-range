@@ -10666,7 +10666,8 @@
 	//   .range
 	//     .track(:style="{width: percentage}")
 	//     .thumb(:style="{left: percentage}", @mousedown="dragStart")
-	//     .value(:style="{left: percentage}")  {{ valFilter(val) }}倍
+	//     .value(:style="{left: percentage}")  {{ valFilter(val) }}
+	//       | <slot></slot>
 	//   ul.mark
 	//     li(v-for="s in scale", :style="{left: _getPercentage(s)}") {{ s }}
 	// </template>
@@ -10745,7 +10746,7 @@
 /***/ 62:
 /***/ function(module, exports) {
 
-	module.exports = "<div @click=\"move\" class=\"input-range\"><div class=\"range\"><div :style=\"{width: percentage}\" class=\"track\"></div><div :style=\"{left: percentage}\" @mousedown=\"dragStart\" class=\"thumb\"></div><div :style=\"{left: percentage}\" class=\"value\"> {{ valFilter(val) }}倍</div></div><ul class=\"mark\"><li v-for=\"s in scale\" :style=\"{left: _getPercentage(s)}\">{{ s }}</li></ul></div>";
+	module.exports = "<div @click=\"move\" class=\"input-range\"><div class=\"range\"><div :style=\"{width: percentage}\" class=\"track\"></div><div :style=\"{left: percentage}\" @mousedown=\"dragStart\" class=\"thumb\"></div><div :style=\"{left: percentage}\" class=\"value\"> {{ valFilter(val) }}\n<slot></slot></div></div><ul class=\"mark\"><li v-for=\"s in scale\" :style=\"{left: _getPercentage(s)}\">{{ s }}</li></ul></div>";
 
 /***/ }
 

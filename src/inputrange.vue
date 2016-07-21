@@ -3,7 +3,8 @@
   .range
     .track(:style="{width: percentage}")
     .thumb(:style="{left: percentage}", @mousedown="dragStart")
-    .value(:style="{left: percentage}")  {{ valFilter(val) }}倍
+    .value(:style="{left: percentage}")  {{ valFilter(val) }}
+      | <slot></slot>
   ul.mark
     li(v-for="s in scale", :style="{left: _getPercentage(s)}") {{ s }}
 </template>
