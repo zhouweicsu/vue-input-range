@@ -1,11 +1,11 @@
 <template lang="jade">
-.range-selector(@click="click($event)")
+.input-range(@click="move")
   .range
-    .select-range(:style="{width: ratio}")
-    .resizer(:style="{left: ratio}", @mousedown="dragStart")
-      .dragger  {{ val }}倍
-  ul.range-num
-    li(v-for="d in duration", :style="{left: ((d - min) * 100 /(max - min)) + '%'}") {{ d }}
+    .track(:style="{width: percentage}")
+    .thumb(:style="{left: percentage}", @mousedown="dragStart")
+    .value(:style="{left: percentage}")  {{ valFilter(val) }}倍
+  ul.mark
+    li(v-for="s in scale", :style="{left: _getPercentage(s)}") {{ s }}
 </template>
 
 <script>
@@ -17,75 +17,60 @@ export default {
     val: {
       default: 0
     },
-    duration: Array
+    scale: Array
   },
   computed: {
     max () {
-      return this.duration[this.duration.length -1];
+      return this.scale[this.scale.length -1];
     },
     min () {
-      return this.duration[0];
+      return this.scale[0];
     },
-    values () {
-      let range = [this.min];
-      let i = 0;
-      while (range[i] + this.step < this.max) {
-        range.push(range[i++] + this.step);
-      }
-      range.push(this.max);
-      return range;
+    precision() {
+      return (this.step.toString().split('.')[1] || []).length;
     },
-    ratio () {
+    percentage () {
       if(this.val < this.min) this.val = this.min;
       if(this.val > this.max) this.val = this.max;
-      return (this.val - this.min) * 100 / (this.max - this.min) + '%';
+      return this._getPercentage(this.val);
     }
   },
   ready () {
-    this.getWholeWidth();
+    this._getWholeWidth();
     this.offset = this.$el.offsetLeft;
-    window.addEventListener('resize', this.getWholeWidth);
+    window.addEventListener('resize', this._getWholeWidth);
   },
   methods: {
-    getWholeWidth() {
-      this.wholeWidth = this.$el.querySelector('.range-selector .range').offsetWidth;
-    },
-    click (e) {
-      this.dragStart();
-      this.dragMove(e);
-      this.dragEnd();
-    },
     dragStart () {
-      this.dragable = true;
-      document.body.addEventListener('mousemove',this.dragMove);
+      document.body.addEventListener('mousemove',this.move);
       document.body.addEventListener('mouseup',this.dragEnd);
     },
-    dragMove (e) {
-      const me = this;
-      const left = e.pageX - me.offset;
-      if (!me.dragable || left < 0 || left > me.wholeWidth) return false;
-      const exactVal = (me.min + left * (me.max-me.min) / me.wholeWidth).toFixed(1);
-      me.setVal(exactVal);
-    },
     dragEnd () {
-      this.dragable = false;
-      document.body.removeEventListener('mousemove',this.dragMove);
+      document.body.removeEventListener('mousemove',this.move);
       document.body.removeEventListener('mouseup',this.dragEnd);
     },
-    setVal (exactVal) {
+    move (e) {
       const me = this;
-      let l = me.values[0];
-      for(let r of me.values) {
-        if(exactVal >= l && exactVal < r) {
-          me.val = exactVal > (l + (r - l) * 0.5 / me.step) ? r : l;
-          break;
-        }
-        l = r;
-      }
+      const left = e.pageX - me.offset;
+      if (left < 0 || left > me.wholeWidth) return false;
+      const delta = (left * (me.max-me.min) / me.wholeWidth).toFixed(this.precision+1);
+      me.val = (delta % me.step < me.step / 2)
+               ? (Math.floor(delta / me.step) * me.step + me.min)
+               : (Math.ceil(delta / me.step) * me.step + me.min);
+    },
+    _getWholeWidth() {
+      this.wholeWidth = this.$el.querySelector('.range').offsetWidth;
+    },
+    _getPercentage(value) {
+      return (value - this.min) * 100 / (this.max - this.min) + '%';
+    },
+    valFilter(val) {
+      this.val = parseFloat(val).toFixed(this.precision);
+      return this.val;
     }
   },
   destroyed() {
-    window.removeEventListener('resize',this.getWholeWidth);
+    window.removeEventListener('resize',this._getWholeWidth);
   }
 }
 </script>

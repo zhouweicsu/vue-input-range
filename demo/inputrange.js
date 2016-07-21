@@ -6,8 +6,8 @@ Vue.component('range', Range);
 var demo = new Vue({
     el: "#demo",
     data: {
-    	val: 10,
-        step: 1,
-        duration: [1,5,10,15,20]
+    	val: 0.6,
+        step: 0.02,
+        scale: [0,0.5,1]
     }
 });
