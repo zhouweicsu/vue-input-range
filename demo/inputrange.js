@@ -7,7 +7,7 @@ var demo = new Vue({
     el: "#demo",
     data: {
     	val: 0.6,
-        step: 0.02,
-        scale: [0,0.5,1]
+        step: 2,
+        scale: [0,90,200]
     }
 });

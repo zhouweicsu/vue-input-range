@@ -2,11 +2,10 @@ $primary-color: #2196f3;
 $range-size: 8px;
 $thumb-size: 20px;
 $thumb-color: white;
-$box-shdow-color: #aaa;
+$box-shadow-color: #aaa;
 
 .input-range {
   width: 100%;
-  font-size: inherit;
   user-select: none;
   cursor: pointer;
   margin: $thumb-size*2 0;
@@ -17,7 +16,6 @@ $box-shdow-color: #aaa;
     height: $range-size;
     background: lighten($primary-color, 30%);
     border-radius: $range-size;
-    margin-top: $thumb-size*2;
 
     .track {
       background: $primary-color;
@@ -28,16 +26,12 @@ $box-shdow-color: #aaa;
     .thumb {
       position: relative;
       background: $thumb-color;
-      box-shadow: 0 0 10px -2px $box-shdow-color;
-      display: block;
+      box-shadow: 0 0 10px -2px $box-shadow-color;
       width: $thumb-size;
       height: $thumb-size;
-      line-height: $thumb-size;
-      text-align: center;
       border-radius: $thumb-size;
       margin-top: -14px;
       transform: translateX(-$thumb-size/2);
-      z-index: 1;
       &.transition {
         transition: all .3s ease;
       }
@@ -59,14 +53,13 @@ $box-shdow-color: #aaa;
       transform: translateX(-50%);
       color: $primary-color;
       background: $thumb-color;
-      box-shadow: 0 0 10px -2px $box-shdow-color;
+      box-shadow: 0 0 10px -2px $box-shadow-color;
       border-radius: 4px;
       height: 20px;
       line-height: 20px;
       padding: 0 10px;
       text-align: center;
       white-space: nowrap;
-      z-index: 1;
       &:before {
         content: ' ';
         position: absolute;
@@ -75,11 +68,9 @@ $box-shdow-color: #aaa;
         left: 50%;
         top: 100%;
         background: #fff;
-        box-shadow: 0 0 10px -2px $box-shdow-color;
         margin-left: -3px;
-        margin-top: -3px;
+        margin-top: -4px;
         transform: rotate(-45deg);
-        z-index: -1;
       }
     }
   }
@@ -94,19 +85,16 @@ $box-shdow-color: #aaa;
       position: absolute;
       top: -$range-size;
       transform: translateX(-50%);
-      &:first-child {
-        transform: translateX(0);
-      }
       &:first-child ,&:last-child {
         &:before {
           visibility: hidden;
         }
       }
       &:before {
+        content: ' ';
         width: 2px;
         height: $range-size;
         background: #fff;
-        content: ' ';
         display: block;
         margin: auto;
         margin-bottom: $thumb-size/2;
