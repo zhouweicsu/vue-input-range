@@ -10,13 +10,13 @@ $box-shadow-color: #aaa;
   margin: $thumb-size*2 0;
   color: $primary-color;
 
-  .range {
+  .track {
     position: relative;
     height: $range-size;
     background: lighten($primary-color, 30%);
     border-radius: $range-size;
 
-    .track {
+    .range {
       background: $primary-color;
       border-radius: $range-size;
       height: 100%;

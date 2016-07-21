@@ -1,7 +1,7 @@
 <template lang="jade">
 .input-range(@click="move")
-  .range
-    .track(:style="{width: percentage}")
+  .track
+    .range(:style="{width: percentage}")
     .thumb(:style="{left: percentage}", @mousedown="dragStart")
     .value(:style="{left: percentage}")  {{ valFilter(val) }}
       | <slot></slot>
@@ -60,7 +60,7 @@ export default {
                : (Math.ceil(delta / me.step) * me.step + me.min);
     },
     _getWholeWidth() {
-      this.wholeWidth = this.$el.querySelector('.range').offsetWidth;
+      this.wholeWidth = this.$el.querySelector('.track').offsetWidth;
     },
     _getPercentage(value) {
       return (value - this.min) * 100 / (this.max - this.min) + '%';
