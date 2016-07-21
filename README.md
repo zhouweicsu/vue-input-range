@@ -1,7 +1,7 @@
 # vue-input-range
 input range components for vue.js
 
-![input range](http://p3.qhimg.com/t019257210cc7ae6c21.jpg)
+![input range](http://p0.qhimg.com/t012e184ba682ec623a.jpg)
 
 # How to use?
 ```
