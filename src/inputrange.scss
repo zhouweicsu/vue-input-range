@@ -5,14 +5,13 @@ $thumb-color: white;
 $box-shadow-color: #aaa;
 
 .input-range {
-  width: 100%;
   user-select: none;
   cursor: pointer;
   margin: $thumb-size*2 0;
+  color: $primary-color;
 
   .range {
     position: relative;
-    width: 100%;
     height: $range-size;
     background: lighten($primary-color, 30%);
     border-radius: $range-size;
@@ -30,35 +29,28 @@ $box-shadow-color: #aaa;
       width: $thumb-size;
       height: $thumb-size;
       border-radius: $thumb-size;
-      margin-top: -14px;
+      margin-top: -($thumb-size + $range-size)/2;
       transform: translateX(-$thumb-size/2);
-      &.transition {
-        transition: all .3s ease;
-      }
-      &:before, &:after {
+      &:before {
         content: ' ';
         position: absolute;
         left: 8px;
         top: 6px;
         height: 8px;
+        width: 3px;
         border-left: 1px solid $primary-color;
-      }
-      &:after {
-        left: 11px;
+        border-right: 1px solid $primary-color;
       }
     }
     .value {
       position: absolute;
       top: -$thumb-size*2;
       transform: translateX(-50%);
-      color: $primary-color;
       background: $thumb-color;
       box-shadow: 0 0 10px -2px $box-shadow-color;
       border-radius: 4px;
-      height: 20px;
       line-height: 20px;
       padding: 0 10px;
-      text-align: center;
       white-space: nowrap;
       &:before {
         content: ' ';
@@ -76,10 +68,7 @@ $box-shadow-color: #aaa;
   }
 
   .mark {
-    color: $primary-color;
     position: relative;
-    width: 100%;
-    cursor: pointer;
     pointer-events: none;
     li {
       position: absolute;
@@ -94,7 +83,7 @@ $box-shadow-color: #aaa;
         content: ' ';
         width: 2px;
         height: $range-size;
-        background: #fff;
+        background: rgba(255,255,255,0.8);
         display: block;
         margin: auto;
         margin-bottom: $thumb-size/2;
